@@ -1,0 +1,29 @@
+.logo {
+  /* Positionnement absolu */
+  position: absolute;
+  /* Utilisation de la police spécifiée dans la variable $font-2 */
+  font-family: $font-2;
+  /* Taille de la police */
+  font-size: 1.2rem;
+  /* Désactivation de la sélection de texte */
+  user-select: none;
+
+  /* Pseudo-élément pour créer le cercle autour du logo */
+  &:after {
+    content: "";
+    /* Dimensions du cercle */
+    height: 24px;
+    width: 24px;
+    /* Bordure solide avec la couleur spécifiée dans la variable $color-2 */
+    border: 1px $color-2 solid;
+    /* Bordure arrondie pour former un cercle */
+    border-radius: 50%;
+    /* Position absolue pour placer le cercle correctement */
+    position: absolute;
+    /* Décalage vers le haut et la gauche pour centrer le cercle autour du logo */
+    top: 1px;
+    left: -12px;
+    /* Z-index inférieur pour être en arrière-plan par rapport au texte du logo */
+    z-index: -1;
+  }
+}

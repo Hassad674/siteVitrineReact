@@ -1,0 +1,28 @@
+.cursor {
+  /* Dimensions du curseur */
+  width: 62px;
+  height: 62px;
+  /* Bordure solide avec la couleur spécifiée dans la variable $color-2 */
+  border: 1px solid $color-2;
+  /* Bordure arrondie pour former un cercle */
+  border-radius: 50%;
+  /* Position absolue pour placer le curseur */
+  position: absolute;
+  /* Centrage du curseur */
+  transform: translate(-50%, -50%);
+  /* Désactivation de l'événement pointer pour ne pas interférer avec les éléments cliquables */
+  pointer-events: none;
+  /* Transition pour l'animation du curseur */
+  transition: 500ms ease-out;
+  /* Z-index pour afficher le curseur au-dessus des autres éléments */
+  z-index: 2;
+  /* Filtre de l'arrière-plan pour ajuster la luminosité */
+  backdrop-filter: brightness(115%);
+
+  /* Style du curseur lorsque survolé */
+  &.hovered {
+    /* Réduction de la taille du curseur */
+    width: 30px;
+    height: 30px;
+  }
+}

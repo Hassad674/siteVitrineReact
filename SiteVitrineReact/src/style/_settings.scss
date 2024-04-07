@@ -1,0 +1,104 @@
+@font-face {
+  /* Définition de la première police personnalisée */
+  font-family: "font-1";
+  /* Chemin d'accès à la police TrueType (TTF) */
+  src: url(../assets/fonts/Questrial-Regular.ttf);
+}
+
+@font-face {
+  /* Définition de la deuxième police personnalisée */
+  font-family: "font-2";
+  /* Chemin d'accès à la police TrueType (TTF) */
+  src: url(../assets/fonts/Michroma-Regular.ttf);
+}
+
+/* Variables de style */
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", serif;
+$color-1: #fafeff;
+$color-2: #00c1ec;
+$color-3: #e7f7fe;
+$color-4: rgb(141, 141, 141);
+$black: rgb(40, 40, 40);
+$red: rgb(253, 87, 87);
+
+/* Réinitialisation des styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+
+  /* Personnalisation de la sélection */
+  &::selection {
+    color: $color-1;
+    background: $color-2;
+  }
+}
+
+/* Configuration de la police pour les liens non visités et visités */
+a,
+a:visited {
+  color: $color-4;
+}
+
+/* Style du corps de la page */
+body {
+  /* Utilisation de la police $font-1 par défaut */
+  font-family: $font-1;
+  /* Hauteur de la page égale à 100% de la hauteur de la vue */
+  height: 100vh;
+  /* Couleur de fond du corps de la page */
+  background-color: $color-1;
+  /* Couleur du texte */
+  color: $black;
+  /* Empêcher le défilement de la page */
+  overflow: hidden;
+
+  /* Réglages spécifiques pour les écrans étroits */
+  @media screen and (max-width: 430px){
+    /* Position relative pour permettre le défilement sur les écrans étroits */
+    position: relative;
+    /* Largeur maximale égale à la largeur de la vue */
+    max-width: 100vw;
+    /* Rétablir le défilement vertical */
+    overflow-y: initial;
+  }
+}
+
+/* Style de la balise principale */
+main {
+  /* Position relative pour les éléments positionnés à l'intérieur */
+  position: relative;
+}
+
+/* Style des boutons */
+.button {
+  /* Couleur de fond du bouton */
+  background: $color-3;
+  /* Hauteur du bouton */
+  height: 55px;
+  /* Largeur du bouton */
+  width: 126px;
+  /* Bordure arrondie pour former un cercle */
+  border-radius: 50px;
+  /* Marge supérieure pour l'espacement */
+  margin-top: 20px;
+  /* Taille de la police */
+  font-size: 1.2rem;
+  /* Curseur personnalisé au survol */
+  cursor: pointer;
+  /* Transition fluide pour l'animation */
+  transition: 0.2s;
+
+  /* Effet de survol */
+  &:hover {
+    /* Espacement des lettres */
+    letter-spacing: 1px;
+    /* Changement de couleur au survol */
+    color: $color-2;
+  }
+}

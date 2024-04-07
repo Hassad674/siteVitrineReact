@@ -1,0 +1,42 @@
+.social-network {
+  /* Position absolue pour placer le bloc des réseaux sociaux */
+  position: absolute;
+  /* Décalage vers la droite */
+  right: 1rem;
+  /* Décalage vers le haut */
+  top: 0;
+  /* Largeur initiale */
+  width: 20%;
+  /* Taille de la police */
+  font-size: 1.2rem;
+
+  /* Réglage de la largeur pour les écrans plus petits */
+  @media screen and (max-width: 650px){
+    width: 30%;
+  }
+
+  /* Style de la liste des réseaux sociaux */
+  ul {
+    /* Affichage en ligne pour aligner les éléments horizontalement */
+    display: flex;
+    /* Largeur fixe */
+    width: 100%;
+    /* Largeur minimale pour éviter la déformation */
+    min-width: 100px;
+    /* Répartition égale de l'espace entre les éléments */
+    justify-content: space-around;
+
+    /* Réglage de la largeur pour les écrans encore plus petits */
+    @media screen and (max-width: 450px){
+      min-width: 100%;
+    }
+
+    /* Style des liens des réseaux sociaux */
+    a {
+      /* Espacement intérieur */
+      padding: 1rem;
+      /* Transition pour l'animation */
+      transition: 1.1s ease-out;
+    }
+  }
+}

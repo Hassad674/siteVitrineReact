@@ -1,0 +1,58 @@
+.dynamic-text {
+  /* Position relative pour les éléments enfants positionnés absolument */
+  position: relative;
+  /* Affichage en ligne */
+  display: flex;
+
+  /* Style de la cible du texte */
+  #text-target {
+    /* Affichage en ligne */
+    display: flex;
+    /* Largeur fixe */
+    width: 300px;
+    /* Alignement du texte à gauche */
+    text-align: left;
+    /* Animation de changement de couleur */
+    animation: color 30s alternate infinite;
+    /* Perspective pour l'effet 3D */
+    perspective: 200px;
+    /* Décalage horizontal */
+    transform: translateX(26px);
+  }
+
+  /* Style des mots */
+  .word {
+    /* Position absolue pour empêcher la déformation du texte */
+    position: absolute;
+  }
+
+  /* Animation de changement de couleur */
+  @keyframes color {
+    0% {
+      color: blue;
+    }
+    50% {
+      color: #ec006e;
+    }
+    100% {
+      color: blue;
+    }
+  }
+
+  /* Style des lettres avec effet 3D */
+  .letter {
+    transform: translateZ(200px);
+  }
+
+  /* Animation des lettres */
+  @keyframes anim {
+    25% {
+      transform: translateZ(0px);
+      opacity: 1;
+    }
+    32% {
+      opacity: 0;
+      transform: translateZ(-280px) translateX(200px);
+    }
+  }
+}

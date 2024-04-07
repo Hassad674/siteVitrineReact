@@ -1,0 +1,32 @@
+.scroll-bottom {
+  a {
+    /* Positionnement absolu et centrage vertical */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    /* Taille de la police et couleur */
+    font-size: 3rem;
+    color: rgb(184, 183, 183);
+    /* Transition pour l'animation au survol */
+    transition: 0.25s;
+    /* Désactivation de la sélection de texte */
+    user-select: none;
+    /* Espacement horizontal */
+    padding: 0 14px;
+
+    /* Animation de la taille de police au survol */
+    &:hover {
+      font-size: 4rem;
+    }
+  }
+
+  /* Positionnement à gauche */
+  .left {
+    left: 15px;
+  }
+
+  /* Positionnement à droite */
+  .right {
+    right: -24px;
+  }
+}

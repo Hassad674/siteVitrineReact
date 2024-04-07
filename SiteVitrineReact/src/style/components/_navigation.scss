@@ -1,0 +1,112 @@
+.navigation {
+  /* Position absolue pour placer la navigation */
+  position: absolute;
+  /* Décalage vers le haut */
+  top: 1rem;
+  /* Décalage vers la gauche */
+  left: 1.4rem;
+  /* Taille de la police */
+  font-size: 1.4rem;
+  /* Hauteur de ligne */
+  line-height: 28px;
+  /* Couleur du texte */
+  color: $color-4;
+
+  /* Pseudo-élément pour créer le fond animé */
+  &:before {
+    content: '';
+    /* Position absolue pour le fond */
+    position: absolute;
+    /* Dimensions du fond */
+    height: 300px;
+    width: 300px;
+    /* Bordure arrondie pour former un cercle */
+    border-radius: 50%;
+    /* Couleur de fond */
+    background: $color-3;
+    /* Décalage vers le haut et la gauche pour centrer le cercle */
+    top: -150px;
+    left: -160px;
+    /* Z-index inférieur pour être en arrière-plan par rapport au texte de la navigation */
+    z-index: -1;
+    /* Animation pour le fond */
+    animation: navAnim 20s infinite alternate;
+  }
+
+  /* Animation du fond */
+  @keyframes navAnim {
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Style des liens de navigation actifs */
+  .nav-active {
+    color: $black;
+  }
+
+  /* Style des éléments de liste non survolés lorsque la liste est survolée */
+  ul:hover li:not(:hover) {
+    opacity: .5;
+  }
+
+  /* Style des éléments de liste survolés */
+  ul:hover li:hover {
+    color: $black;
+  }
+
+  /* Style du portfolio */
+  .nav-portfolio {
+    /* Curseur personnalisé au survol */
+    cursor: pointer;
+    /* Affichage en ligne pour aligner les éléments */
+    display: flex;
+    /* Transition pour l'animation */
+    transition: .5s;
+
+    /* Animation du sous-menu lorsque survolé */
+    &:hover .nav-projects,
+    .nav-projects:hover {
+      /* Affichage et opacité */
+      visibility: visible;
+      opacity: 1;
+
+      /* Animation des éléments de liste */
+      li {
+        transform: rotatey(0deg)
+      }
+    }
+
+    /* Sous-menu des projets */
+    .nav-projects {
+      /* Position absolue */
+      position: absolute;
+      /* Caché initialement */
+      visibility: hidden;
+      opacity: 0;
+      /* Espacement intérieur */
+      padding: 0 40px;
+      /* Largeur fixe */
+      width: 300px;
+      /* Décalage horizontal */
+      transform: translateX(70px);
+      /* Transition pour l'animation */
+      transition: .3s ;
+      /* Perspective pour l'effet 3D */
+      perspective: 500px;
+
+      /* Style des éléments de liste */
+      li {
+        /* Rotation de départ et échelle */
+        transform: rotatey(30deg) scaleX(1.2);
+        /* Point d'origine de la transformation */
+        transform-origin: center;
+        /* Transition pour l'animation */
+        transition: .3s;
+      }
+    }
+  }
+}
